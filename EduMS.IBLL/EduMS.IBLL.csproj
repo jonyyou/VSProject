@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="IDepart_SpeManager.cs" />
     <Compile Include="IOriginClassManager.cs" />
+    <Compile Include="ITeacherManager.cs" />
     <Compile Include="IUserManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
