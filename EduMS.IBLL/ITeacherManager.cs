@@ -8,5 +8,8 @@ namespace EduMS.IBLL
 {
     public interface ITeacherManager
     {
+
+
+
     }
 }
