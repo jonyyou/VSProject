@@ -1,4 +1,6 @@
-﻿using EduMS.IDAL;
+﻿///管理人员
+
+using EduMS.IDAL;
 using EduMS.Models;
 using System;
 using System.Collections.Generic;

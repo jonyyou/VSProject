@@ -1,4 +1,7 @@
-﻿using EduMS.Models;
+﻿/// 数据库操作函数   DAL中数据原型
+/// 数据库访问层
+
+using EduMS.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

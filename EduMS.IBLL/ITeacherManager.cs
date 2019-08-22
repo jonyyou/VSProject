@@ -8,8 +8,7 @@ namespace EduMS.IBLL
 {
     public interface ITeacherManager
     {
-
-
+        Task AddTeacher(string teaId, string teaName, string gender, string telephone, string IDNumber, string pwd, string DepartmentId);
 
     }
 }

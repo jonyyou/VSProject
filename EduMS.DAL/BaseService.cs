@@ -1,4 +1,6 @@
-﻿using EduMS.IDAL;
+﻿///对数据库的操作：插入 删除之类  对IDAL的具体实现
+
+using EduMS.IDAL;
 using EduMS.Models;
 using System;
 using System.Collections.Generic;

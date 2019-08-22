@@ -1,4 +1,7 @@
-﻿using System;
+﻿///业务逻辑层，实现IBLL
+///班级
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
