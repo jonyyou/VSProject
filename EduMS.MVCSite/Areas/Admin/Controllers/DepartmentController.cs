@@ -11,10 +11,17 @@ namespace EduMS.MVCSite.Areas.Admin.Controllers
 {
     public class DepartmentController : Controller
     {
-        // GET: Admin/Department
-        public ActionResult Index()
+        // GET: Admin/Department ,获取院系列表
+        [HttpGet]
+        public async Task<ActionResult> Index()
         {
-            return View();
+            return View(await new Depart_SpeManager().GetAllDepartments());
+        }
+
+        [HttpGet]
+        public async  Task<ActionResult> SpecialityList(string departmentId)
+        {
+            return View(await new Depart_SpeManager().GetAllSpecialitys(departmentId));
         }
 
         // GET: Admin/Department/Details/5

@@ -137,6 +137,7 @@
     <Compile Include="Models\Admin\DepartmentViewModel.cs" />
     <Compile Include="Models\Admin\OriginClassViewModel.cs" />
     <Compile Include="Models\Admin\SpecialityViewModel.cs" />
+    <Compile Include="Models\Admin\StudentViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -225,6 +226,13 @@
     <Content Include="Areas\Admin\Views\Department\CreateDepartment.cshtml" />
     <Content Include="Areas\Admin\Views\Department\CreateSpeciality.cshtml" />
     <Content Include="Areas\Admin\Views\OriginClass\CreateOriginClass.cshtml" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Department\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Department\SpecialityList.cshtml" />
+    <Content Include="Areas\Admin\Views\OriginClass\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\OriginClass\StudentList.cshtml" />
+    <Content Include="Areas\Admin\Views\OriginClass\CreateStudents.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -254,7 +262,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\Admin\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

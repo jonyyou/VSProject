@@ -41,6 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DepartmentInfoDto.cs" />
+    <Compile Include="OriginClassDto.cs" />
+    <Compile Include="SpecialityInfoDto.cs" />
+    <Compile Include="StudentInfoDto.cs" />
     <Compile Include="UserInfoDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

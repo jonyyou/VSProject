@@ -11,10 +11,17 @@ namespace EduMS.MVCSite.Areas.Admin.Controllers
 {
     public class OriginClassController : Controller
     {
-        // GET: Admin/OriginClass
-        public ActionResult Index()
+        // GET: Admin/OriginClass, 自然班级的列表
+        [HttpGet]
+        public async Task<ActionResult> Index()
         {
-            return View();
+            return View(await new OriginClassManager().GetAllOriginClasses());
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> StudentList(string classId)
+        {
+            return View(await new OriginClassManager().GetAllStudents(classId));
         }
 
         // GET: Admin/OriginClass/Details/5
@@ -52,18 +59,12 @@ namespace EduMS.MVCSite.Areas.Admin.Controllers
         // POST: Admin/OriginClass/CreateStudents
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateStudents(FormCollection collection)
+        public async Task<ActionResult> CreateStudents(StudentViewModel model)
         {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            if (!ModelState.IsValid) return View(model);
+            IBLL.IOriginClassManager Manager = new OriginClassManager();
+            await Manager.AddStudents(model.DepartmentId, model.ClassId, model.StuId, model.StuName, model.Gender, model.Telephone, model.IDNumber, model.Pwd, model.Major);
+            return Content("添加成功");
         }
         /*// GET: Admin/OriginClass/Edit/5
         public ActionResult Edit(int id)

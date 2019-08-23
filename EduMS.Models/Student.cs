@@ -51,7 +51,8 @@ namespace EduMS.Models
         public string DepartmentId { get; set; }
         public Department Department { get; set; }
 
-
-
+        //[ForeignKey(nameof(Speciality))]
+       // public string SpecialityId { get; set; }
+       // public Speciality Speciality { get; set; }
     }
 }

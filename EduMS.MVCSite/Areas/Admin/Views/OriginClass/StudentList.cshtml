@@ -1,0 +1,69 @@
+﻿@model IEnumerable<EduMS.Dto.StudentInfoDto>
+
+@{
+    ViewBag.Title = "StudentList";
+}
+
+<h2>StudentList</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartmentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StuId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StuName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telephone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Major)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartmentName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StuId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StuName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telephone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Major)
+        </td>
+        <td>
+            @Html.ActionLink("返回班级列表", "Index", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
