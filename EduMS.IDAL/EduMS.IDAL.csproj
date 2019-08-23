@@ -50,6 +50,7 @@
     <Compile Include="IAdminService.cs" />
     <Compile Include="IBaseService.cs" />
     <Compile Include="IDepartmentService.cs" />
+    <Compile Include="INewsCategoryService.cs" />
     <Compile Include="IOriginClassService.cs" />
     <Compile Include="ISpecialityService.cs" />
     <Compile Include="IStudentService.cs" />

@@ -12,6 +12,7 @@ namespace EduMS.MVCSite.Areas.Admin.Controllers
     public class OriginClassController : Controller
     {
         // GET: Admin/OriginClass, 自然班级的列表
+        /// 从数据库到页面
         [HttpGet]
         public async Task<ActionResult> Index()
         {

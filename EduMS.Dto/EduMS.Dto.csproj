@@ -45,6 +45,7 @@
     <Compile Include="OriginClassDto.cs" />
     <Compile Include="SpecialityInfoDto.cs" />
     <Compile Include="StudentInfoDto.cs" />
+    <Compile Include="TeacherInfoDto.cs" />
     <Compile Include="UserInfoDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
