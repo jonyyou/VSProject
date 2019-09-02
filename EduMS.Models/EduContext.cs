@@ -36,7 +36,9 @@ namespace EduMS.Models
         public DbSet<Banner> Banner { get; set; }
         public DbSet<NewsCategory> NewsCategory { get; set; }
         public DbSet<News> News { get; set; }
-
+        public DbSet<Course> Course { get; set; }
+        public DbSet<PublishedCourse> PublishedCourse { get; set; }
+        public DbSet<Enrollment> Enrollment { get; set; }
 
 
 

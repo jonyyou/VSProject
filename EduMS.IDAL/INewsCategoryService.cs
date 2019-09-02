@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EduMS.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,6 @@ namespace EduMS.IDAL
 {
     public interface INewsCategoryService : IBaseService<Models.NewsCategory>
     {
+        Task<NewsCategory> GetOneByName(string categoryName);
     }
 }
