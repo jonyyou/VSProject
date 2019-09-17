@@ -15,6 +15,9 @@ namespace EduMS.Models
 
         [Column(TypeName = "ntext"), Required]
         public string Content { get; set; }
-        public virtual NewsCategory NewsCategory { get; set; }
+
+        [ForeignKey(nameof(NewsCategory))]
+        public string CategoryId { get; set; }
+        public NewsCategory NewsCategory { get; set; }
     }
 }

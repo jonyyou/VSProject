@@ -239,8 +239,11 @@
     <Content Include="Areas\Admin\Views\OriginClass\StudentList.cshtml" />
     <Content Include="Areas\Admin\Views\OriginClass\CreateStudents.cshtml" />
     <Content Include="Areas\Admin\Views\Banner\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\News\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Banner\AddBanner.cshtml" />
+    <Content Include="Areas\Admin\Views\News\NewsCategoryList.cshtml" />
+    <Content Include="Areas\Admin\Views\News\AddNewsCategory.cshtml" />
+    <Content Include="Areas\Admin\Views\News\AddNews.cshtml" />
+    <Content Include="Areas\Admin\Views\News\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

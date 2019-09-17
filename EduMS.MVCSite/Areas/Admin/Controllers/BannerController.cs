@@ -27,31 +27,7 @@ namespace EduMS.MVCSite.Areas.Admin.Controllers
         [HttpPost]
         public  ActionResult AddBanner(HttpPostedFileBase file)
         {
-            if (file == null)
-                return Content("请选择图片上传","text/plain");
-
-            string extension = Path.GetExtension(file.FileName);
-            string[] fileTypes = new string[] { ".gif", ".jpg", ".jpeg", ".png", ".bmp" };
-            if (fileTypes.Contains(extension.ToLower()))
-            {
-                string webRootPath = Server.MapPath("/");
-                string relativePath = "\\Banners";
-                string absolutePath = webRootPath + relativePath;
-                
-                if (!Directory.Exists(absolutePath))
-                    Directory.CreateDirectory(absolutePath);
-
-                string fileName = Path.GetFileName(file.FileName) + extension;
-                var filePath = absolutePath + "\\" + fileName;
-                try
-                {
-                    file.SaveAs(filePath);
-                }
-                catch
-                {
-                    return Content("上传异常", "text/plain");
-                }
-            }
+            
             return Content("请上传图片(.gif, .jpg,.jpeg, .png, .bmp格式)", "text/plain");
             
             

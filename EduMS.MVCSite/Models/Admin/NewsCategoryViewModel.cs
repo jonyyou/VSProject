@@ -8,6 +8,8 @@ namespace EduMS.MVCSite.Models.Admin
 {
     public class NewsCategoryViewModel
     {
+        [Required]
+        public string CategoryId { get; set; }
         [Required,StringLength(10)]
         public string CategoryName { get; set; }
     }

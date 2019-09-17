@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using EduMS.MVCSite.Models.Admin;
 using EduMS.BLL;
+using EduMS.Dto;
 using System.Threading.Tasks;
 
 namespace EduMS.MVCSite.Areas.Admin.Controllers
@@ -25,16 +26,15 @@ namespace EduMS.MVCSite.Areas.Admin.Controllers
             return View(await new OriginClassManager().GetAllStudents(classId));
         }
 
-        // GET: Admin/OriginClass/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
+        
 
         // GET: Admin/OriginClass/CreateOriginClass
         [HttpGet]
-        public ActionResult CreateOriginClass()
+        public async Task<ActionResult> CreateOriginClass()
         {
+            IBLL.IDepart_SpeManager Mnger = new Depart_SpeManager();
+            List<DepartmentInfoDto> departmentList = await Mnger.GetAllDepartments(); ;
+            ViewBag.DepartmentList = departmentList;
             return View();
         }
 
@@ -52,8 +52,16 @@ namespace EduMS.MVCSite.Areas.Admin.Controllers
 
         // GET: Admin/OriginClass/CreateStudents
         [HttpGet]
-        public ActionResult CreateStudents()
+        public async Task<ActionResult> CreateStudents()
         {
+            IBLL.IDepart_SpeManager Mnger = new Depart_SpeManager();
+            List<DepartmentInfoDto> departmentList = await Mnger.GetAllDepartments(); ;
+            ViewBag.DepartmentList = departmentList;
+
+
+            IBLL.IOriginClassManager Mnger2 = new OriginClassManager();
+            List<OriginClassDto> classList = await Mnger2.GetAllOriginClasses(); ;
+            ViewBag.classList = classList;
             return View();
         }
 

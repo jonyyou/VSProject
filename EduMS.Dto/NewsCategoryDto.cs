@@ -8,6 +8,7 @@ namespace EduMS.Dto
 {
     public class NewsCategoryDto
     {
+        public string CategoryId { get; set; }
         public string CategoryName { get; set; }
     }
 }

@@ -13,14 +13,8 @@ namespace EduMS.BLL
 {
     public class NewsManager : INewsManager
     {
-        public async Task AddNews(string title, string content, string categoryName)
+        public async Task AddNews(string title, string content, string categoryId)
         {
-            NewsCategory newsCategory= new NewsCategory();
-            using (INewsCategoryService svc = new DAL.NewsCategoryService())
-            {
-                newsCategory = await svc.GetOneByName(categoryName);
-            }
-
             using (IDAL.INewsService Svc = new DAL.NewsService())
             {
                 await Svc.CreateAsync(new News()
@@ -28,18 +22,19 @@ namespace EduMS.BLL
                     ModifyTime = DateTime.Now,
                     Title = title,
                     Content = content,
-                    NewsCategory = newsCategory
+                    CategoryId = categoryId
                 });
             }
         }
 
-        public async Task AddNewsCategory(string newsCategoryName)
+        public async Task AddNewsCategory(string CategoryId, string newsCategoryName)
         {
             using (IDAL.INewsCategoryService Svc = new DAL.NewsCategoryService())
             {
                 await Svc.CreateAsync(new NewsCategory()
                 {
                     ModifyTime = DateTime.Now,
+                    CategoryId = CategoryId,
                     CategoryName = newsCategoryName
                 });
             }
@@ -51,6 +46,7 @@ namespace EduMS.BLL
             {
                 return await Svc.GetAllAsync().Select(m => new Dto.NewsCategoryDto()
                 {
+                    CategoryId = m.CategoryId,
                     CategoryName = m.CategoryName
                 }).ToListAsync();
             }
@@ -62,6 +58,7 @@ namespace EduMS.BLL
             {
                 return await Svc.GetAllAsync().Select(m => new Dto.NewsDto()
                 {
+                    CategoryId = m.CategoryId,
                     Title = m.Title,
                     Content = m.Content,
                     CategoryName = m.NewsCategory.CategoryName

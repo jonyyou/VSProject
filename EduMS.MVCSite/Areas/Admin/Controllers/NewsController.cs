@@ -37,14 +37,18 @@ namespace EduMS.MVCSite.Areas.Admin.Controllers
             if(!ModelState.IsValid)
                 return View(model);
             IBLL.INewsManager Manager = new NewsManager();
-            await Manager.AddNewsCategory(model.CategoryName);
+            await Manager.AddNewsCategory(model.CategoryId,model.CategoryName);
             return Content("添加成功");
         }
 
         [HttpGet]
-        public ActionResult AddNews()
+        public async Task<ActionResult> AddNews()
         {
+            IBLL.INewsManager Mnger = new NewsManager();
+            List<NewsCategoryDto> newsCategoryList = await Mnger.GetAllNewsCategory(); ;
+            ViewBag.NewsCategoryList = newsCategoryList;
             return View();
+          
         }
 
         [HttpPost]
@@ -54,7 +58,7 @@ namespace EduMS.MVCSite.Areas.Admin.Controllers
             if (!ModelState.IsValid)
                 return View(model);
             IBLL.INewsManager Manager = new NewsManager();
-            await Manager.AddNews(model.Title, model.Content, model.CategoryName);
+            await Manager.AddNews(model.Title, model.Content, model.CategoryId);
             return Content("添加成功");
         }
 

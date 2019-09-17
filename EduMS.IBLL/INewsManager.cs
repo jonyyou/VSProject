@@ -9,9 +9,9 @@ namespace EduMS.IBLL
 {
     public interface INewsManager
     {
-        Task AddNewsCategory(string newsCategoryName);
+        Task AddNewsCategory(string CategoryId,string newsCategoryName);
         //Task DeleteDepartment(string departmentId);
-        Task AddNews(string title, string content, string categoryName);
+        Task AddNews(string title, string content, string categoryId);
         Task<List<NewsCategoryDto>> GetAllNewsCategory();
         Task<List<NewsDto>> GetAllNews();
     }

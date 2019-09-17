@@ -57,6 +57,7 @@ namespace EduMS.BLL
             {
                 return await originClassService.GetAllAsync().Select(m => new Dto.OriginClassDto()
                 {
+                    DepartmentId = m.DepartmentId,
                     DepartmentName = m.Department.DepartmentName,
                     ClassId = m.ClassId,
                     ClassName = m.ClassName,
