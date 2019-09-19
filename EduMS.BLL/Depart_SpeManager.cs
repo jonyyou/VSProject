@@ -44,6 +44,14 @@ namespace EduMS.BLL
             }
         }
 
+        public async Task<List<String>> GetAllDepartmentId()
+        {
+            using (IDAL.IDepartmentService departmentService = new DepartmentService())
+            {
+                return await departmentService.GetAllAsync().Select(m => m.DepartmentId).ToListAsync();
+            }
+        }
+
         public async Task<List<DepartmentInfoDto>> GetAllDepartments()
         {
             using (IDAL.IDepartmentService departmentService = new DepartmentService())

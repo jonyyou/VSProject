@@ -128,6 +128,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\BannerController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CourseController.cs" />
     <Compile Include="Areas\Admin\Controllers\DepartmentController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\NewsController.cs" />
@@ -137,6 +138,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Admin\BannerViewModel.cs" />
+    <Compile Include="Models\Admin\CaltivatePlanViewModel.cs" />
+    <Compile Include="Models\Admin\CourseViewModel.cs" />
     <Compile Include="Models\Admin\DepartmentViewModel.cs" />
     <Compile Include="Models\Admin\NewsCategoryViewModel.cs" />
     <Compile Include="Models\Admin\NewsViewModel.cs" />
@@ -244,6 +247,11 @@
     <Content Include="Areas\Admin\Views\News\AddNewsCategory.cshtml" />
     <Content Include="Areas\Admin\Views\News\AddNews.cshtml" />
     <Content Include="Areas\Admin\Views\News\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Course\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Course\AddCaltivatePlan.cshtml" />
+    <Content Include="Areas\Admin\Views\Course\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Course\CaltivatePlanList.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\CaltivatePlanView.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -273,6 +281,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Banner\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

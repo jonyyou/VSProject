@@ -53,6 +53,7 @@
     <Compile Include="Admin.cs" />
     <Compile Include="Banner.cs" />
     <Compile Include="BaseEntity.cs" />
+    <Compile Include="CaltivatePlan.cs" />
     <Compile Include="Course.cs" />
     <Compile Include="Department.cs" />
     <Compile Include="EduContext.cs" />
@@ -76,6 +77,26 @@
     <Compile Include="Migrations\201909161210221_modifyNews.cs" />
     <Compile Include="Migrations\201909161210221_modifyNews.Designer.cs">
       <DependentUpon>201909161210221_modifyNews.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909181509431_createCaltivatePlan.cs" />
+    <Compile Include="Migrations\201909181509431_createCaltivatePlan.Designer.cs">
+      <DependentUpon>201909181509431_createCaltivatePlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909190024188_modifyCourse.cs" />
+    <Compile Include="Migrations\201909190024188_modifyCourse.Designer.cs">
+      <DependentUpon>201909190024188_modifyCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909190027035_modifyCourse1.cs" />
+    <Compile Include="Migrations\201909190027035_modifyCourse1.Designer.cs">
+      <DependentUpon>201909190027035_modifyCourse1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909190028597_modifyCourse2.cs" />
+    <Compile Include="Migrations\201909190028597_modifyCourse2.Designer.cs">
+      <DependentUpon>201909190028597_modifyCourse2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909190059469_addCaltivatePlan.cs" />
+    <Compile Include="Migrations\201909190059469_addCaltivatePlan.Designer.cs">
+      <DependentUpon>201909190059469_addCaltivatePlan.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="News.cs" />
@@ -106,6 +127,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909161210221_modifyNews.resx">
       <DependentUpon>201909161210221_modifyNews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909181509431_createCaltivatePlan.resx">
+      <DependentUpon>201909181509431_createCaltivatePlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909190024188_modifyCourse.resx">
+      <DependentUpon>201909190024188_modifyCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909190027035_modifyCourse1.resx">
+      <DependentUpon>201909190027035_modifyCourse1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909190028597_modifyCourse2.resx">
+      <DependentUpon>201909190028597_modifyCourse2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909190059469_addCaltivatePlan.resx">
+      <DependentUpon>201909190059469_addCaltivatePlan.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

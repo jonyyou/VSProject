@@ -27,37 +27,23 @@
 <body>
     <div class="pd-20">
         <div class="Huiform">
-            <form method="post">
+            <form id="form1" name="form1" action="/Banner/AddBannerPost" method="post" enctype="multipart/form-data">
                 <table class="table table-bg">
                     <tbody>
                         <tr>
                             <th class="text-r">Banner图片：</th>
-                            <td><input type="file" style="width:300px" class="" name="" multiple datatype="*2-120" nullmsg="Banner图片不能为空"></td>
-                        </tr>
-                        <tr>
-                            <th class="text-r">跳转地址：</th>
-                            <td><input type="text" style="width:300px" class="input-text" value="" placeholder="" id="url" name="url"></td>
-                        </tr>
-                        <tr>
-                            <th class="text-r">备注：</th>
-                            <td><input type="text" style="width:300px" class="input-text" value="" placeholder="" id="remark" name="remark"></td>
+                            <td><input type="file" style="width:300px" id="picture" name="picture" multiple datatype="*2-120" nullmsg="Banner图片不能为空"></td>
                         </tr>
                         <tr>
                             <th></th>
-                            <td><button class="btn btn-success radius" type="submit"><i class="icon-ok"></i> 确定</button></td>
+                            <td><input class="btn btn-success radius" type="submit" value="上传" /></td>
                         </tr>
                     </tbody>
                 </table>
             </form>
         </div>
     </div>
-    <script type="text/javascript" src="~/Content/Admin/js/jquery.min.js"></script>
-    <script type="text/javascript" src="~/Content/Admin/js/Validform_v5.3.2_min.js"></script>
-    <script type="text/javascript" src="~/Content/Admin/js/H-ui.js"></script>
-    <script type="text/javascript" src="~/Content/Admin/js/H-ui.admin.js"></script>
-    <script type="text/javascript">
-$(".Huiform").Validform();
-    </script>
+    
 
 </body>
 </html>

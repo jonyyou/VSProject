@@ -25,18 +25,20 @@ namespace EduMS.MVCSite.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public  ActionResult AddBanner(HttpPostedFileBase file)
+        public  ActionResult AddBannerPost()
         {
+            HttpPostedFileBase file = Request.Files["picture"];
+            if(file!=null)
+            {
+                string fileName = file.FileName;
+                string str = fileName.Substring(fileName.LastIndexOf("\\") + 1);
+                string path = "/Banner/" + Guid.NewGuid() + str;
+                file.SaveAs(Server.MapPath(path));
+                return Content("上传成功");
+            }
             
             return Content("请上传图片(.gif, .jpg,.jpeg, .png, .bmp格式)", "text/plain");
             
-            
-
-           
-
-            
-            
-
         }
 
         // GET: Admin/Banner/Details/5

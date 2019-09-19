@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BannerInfoDto.cs" />
+    <Compile Include="CaltivatePlanDto.cs" />
+    <Compile Include="CourseInfoDto.cs" />
     <Compile Include="DepartmentInfoDto.cs" />
     <Compile Include="NewsCategoryDto.cs" />
     <Compile Include="NewsDto.cs" />
