@@ -95,7 +95,8 @@ namespace EduMS.MVCSite.Areas.Admin.Controllers
             };
 
             ViewBag.SemesterList = semesterList;
-
+            if (departmentId == null || semester == null)
+                return Content("参数为空");
             IBLL.ICourseManager Manager = new CourseManager();
             List<CaltivatePlanDto> caltivatePlanList = await Manager.GetAllCoursesByDepart(departmentId, semester);
             return View(caltivatePlanList);
