@@ -1,0 +1,35 @@
+﻿@model IEnumerable<EduMS.Dto.CaltivatePlanDto>
+
+@{
+    ViewBag.Title = "QueryCaltivatePlan";
+}
+
+<h2>查看学院培养方案</h2>
+
+<p>
+    @Html.ActionLink("添加条目", "AddCaltivatePlan")
+</p>
+
+@using (Html.BeginForm("QueryCaltivatePlan", "Course", FormMethod.Post))
+
+{
+
+<p>
+
+    学院:@Html.DropDownList("DepartmentId", ViewBag.DepartmentList as IEnumerable<SelectListItem>, "--select--", new { @class = "form-control  input-small" })
+
+    学期:@Html.DropDownList("Semester", ViewBag.SemesterList as IEnumerable<SelectListItem>, "--select--", new { @class = "form-control  input-small" })
+        <input type="submit" value="查看培养方案" name="action1" class="btn btn-default" />
+        <input type="submit" value="发布选课" name="action2" class="btn btn-default" />
+
+    
+
+</p>
+
+}
+
+
+
+
+
+

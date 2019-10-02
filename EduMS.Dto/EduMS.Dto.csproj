@@ -48,6 +48,7 @@
     <Compile Include="NewsCategoryDto.cs" />
     <Compile Include="NewsDto.cs" />
     <Compile Include="OriginClassDto.cs" />
+    <Compile Include="PublishCourseDto.cs" />
     <Compile Include="SpecialityInfoDto.cs" />
     <Compile Include="StudentInfoDto.cs" />
     <Compile Include="TeacherInfoDto.cs" />

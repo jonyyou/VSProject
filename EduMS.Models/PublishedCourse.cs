@@ -8,16 +8,13 @@ using System.Threading.Tasks;
 
 namespace EduMS.Models
 {
-    public class PublishedCourse
+    public class PublishedCourse:BaseEntity
     {
 
         [ForeignKey(nameof(Department))]
         public string DepartmentId { get; set; }
         public Department Department { get; set; }
 
-   
-        [Required, Key]
-        public int Id { get; set; }
         [ForeignKey(nameof(Course))]
         public string CourseId { get; set; }
         public Course Course { get; set; }

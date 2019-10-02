@@ -133,6 +133,7 @@
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\NewsController.cs" />
     <Compile Include="Areas\Admin\Controllers\OriginClassController.cs" />
+    <Compile Include="Attribute\MultiButtonAttribute.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -144,6 +145,7 @@
     <Compile Include="Models\Admin\NewsCategoryViewModel.cs" />
     <Compile Include="Models\Admin\NewsViewModel.cs" />
     <Compile Include="Models\Admin\OriginClassViewModel.cs" />
+    <Compile Include="Models\Admin\PublishCourseViewModel.cs" />
     <Compile Include="Models\Admin\SpecialityViewModel.cs" />
     <Compile Include="Models\Admin\StudentViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -250,8 +252,10 @@
     <Content Include="Areas\Admin\Views\Course\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Course\AddCaltivatePlan.cshtml" />
     <Content Include="Areas\Admin\Views\Course\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Course\CaltivatePlanList.cshtml" />
-    <Content Include="Areas\Admin\Views\Shared\CaltivatePlanView.cshtml" />
+    <Content Include="Areas\Admin\Views\Course\QueryCaltivatePlan.cshtml" />
+    <Content Include="Areas\Admin\Views\Course\ShowCaltivatePlanList.cshtml" />
+    <Content Include="Areas\Admin\Views\Course\ShowPubCourseList.cshtml" />
+    <Content Include="Areas\Admin\Views\Course\EditTeacher.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

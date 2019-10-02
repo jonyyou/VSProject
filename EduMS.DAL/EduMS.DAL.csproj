@@ -58,6 +58,7 @@
     <Compile Include="NewsService.cs" />
     <Compile Include="OriginClassService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublishedCourseService.cs" />
     <Compile Include="SpecialityService.cs" />
     <Compile Include="StudentService.cs" />
     <Compile Include="TeacherService.cs" />

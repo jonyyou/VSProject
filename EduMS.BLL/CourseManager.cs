@@ -71,5 +71,23 @@ namespace EduMS.BLL
                 }).ToListAsync();
             }
         }
+
+        public async Task<List<PublishCourseDto>> PublishCourse(string departmentId, string semester)
+        {
+            List<CaltivatePlanDto> cal = await GetAllCoursesByDepart(departmentId, semester);
+            List<PublishCourseDto> pub = new List<PublishCourseDto>();
+            foreach(CaltivatePlanDto item in cal)
+            {
+                pub.Add(new PublishCourseDto
+                { 
+                    DepartmentId = departmentId,
+                    CourseId = item.CourseId,
+                    CourseName = item.CourseName,
+                    TeaName = ""
+                });
+                
+            }
+            return pub;
+        }
     }
 }

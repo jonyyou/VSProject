@@ -1,5 +1,6 @@
 ﻿using EduMS.BLL;
 using EduMS.Dto;
+using EduMS.MVCSite.Attribute;
 using EduMS.MVCSite.Models.Admin;
 using System;
 using System.Collections.Generic;
@@ -76,11 +77,11 @@ namespace EduMS.MVCSite.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> CaltivatePlanList(string departmentId, string semester)
+        public async Task<ActionResult> QueryCaltivatePlan()
         {
             IBLL.IDepart_SpeManager Mnger = new Depart_SpeManager();
-            List<String> departmentList = await Mnger.GetAllDepartmentId();
-            ViewBag.DepartmentList = new SelectList(departmentList);
+            List<DepartmentInfoDto> departmentList = await Mnger.GetAllDepartments();
+            ViewBag.DepartmentList = new SelectList(departmentList, "DepartmentId", "DepartmentName");
            
             var semesterList = new List<SelectListItem>() {
                 new SelectListItem() { Value = "1-1", Text = "大一上" },
@@ -93,27 +94,64 @@ namespace EduMS.MVCSite.Areas.Admin.Controllers
                 new SelectListItem() { Value = "4-2", Text = "大四下" }
 
             };
-
             ViewBag.SemesterList = semesterList;
-            if (departmentId == null || semester == null)
-                return Content("参数为空");
+           
+            return View();
+        }
+
+        [HttpPost]
+        [MultiButton("action1")]
+        public ActionResult QueryCaltivatePlan(FormCollection collection)
+        {
+            string departmentId = collection["DepartmentId"];
+            string semester = collection["Semester"];
+            if(departmentId!=null && semester!=null)
+                return RedirectToAction("ShowCaltivatePlanList", new { DepartmentId = departmentId, Semester = semester });
+            return View();
+        }
+
+        [HttpPost]
+        [MultiButton("action2")]
+        public ActionResult PublishCaltivatePlan(FormCollection collection)
+        {
+            string departmentId = collection["DepartmentId"];
+            string semester = collection["Semester"];
+            if(departmentId != null && semester != null)
+                return RedirectToAction("ShowPubCourseList", new { DepartmentId = departmentId, Semester = semester });
+            return View();
+        }
+
+        public async Task<ActionResult> ShowCaltivatePlanList(string DepartmentId, string Semester)
+        {
             IBLL.ICourseManager Manager = new CourseManager();
-            List<CaltivatePlanDto> caltivatePlanList = await Manager.GetAllCoursesByDepart(departmentId, semester);
+            List<CaltivatePlanDto> caltivatePlanList = await Manager.GetAllCoursesByDepart(DepartmentId, Semester);
             return View(caltivatePlanList);
         }
 
-
-        /*public async Task<ActionResult> ShowCourseInCalPlan*/
-
-        // GET: Admin/Course/Edit/5
-        public ActionResult Edit(int id)
+        public async Task<ActionResult> ShowPubCourseList(string DepartmentId, string Semester)
         {
-            return View();
+            IBLL.ICourseManager Manager = new CourseManager();
+            List<PublishCourseDto> pub = await Manager.PublishCourse(DepartmentId, Semester);
+            return View(pub);
+        }
+        // GET: Admin/Course/Edit/5
+        public ActionResult EditTeacher(string departmentId, string courseId, string courseName)
+        {
+            PublishCourseViewModel m = new PublishCourseViewModel
+            {
+                DepartmentId = departmentId,
+                CourseId = courseId,
+                CourseName = courseName,
+                TeaId = ""
+            };
+
+
+            return View(m);
         }
 
         // POST: Admin/Course/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult EditTeacher(PublishCourseDto p)
         {
             try
             {
