@@ -52,6 +52,7 @@
     <Compile Include="Depart_SpeManager.cs" />
     <Compile Include="NewsManager.cs" />
     <Compile Include="OriginClassManager.cs" />
+    <Compile Include="TeacherManager.cs" />
     <Compile Include="UserManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

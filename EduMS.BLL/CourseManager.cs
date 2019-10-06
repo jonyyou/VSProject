@@ -89,5 +89,21 @@ namespace EduMS.BLL
             }
             return pub;
         }
+
+        public async Task SaveTeacher(string departmentId, string courseId, string teaId)
+        {
+            PublishedCourse model = new PublishedCourse
+            {
+                ModifyTime = DateTime.Now,
+                CourseId = courseId,
+                DepartmentId = departmentId,
+                TeaId = teaId
+            };
+
+            using (IDAL.IPublishedCourseService Svc = new DAL.PublishedCourseService())
+            {
+                await Svc.EditAsync(model);
+            }
+        }
     }
 }

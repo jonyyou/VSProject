@@ -14,5 +14,6 @@ namespace EduMS.IBLL
         Task AddCaltivatePlan(string semester, string courseId, string departmentId);
         Task<List<CaltivatePlanDto>> GetAllCoursesByDepart(string departmentId, string semester);
         Task<List<PublishCourseDto>> PublishCourse(string departmentId, string semester);
+        Task SaveTeacher(string departmentId, string courseId, string teaId);
     }
 }

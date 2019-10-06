@@ -135,34 +135,29 @@ namespace EduMS.MVCSite.Areas.Admin.Controllers
             return View(pub);
         }
         // GET: Admin/Course/Edit/5
-        public ActionResult EditTeacher(string departmentId, string courseId, string courseName)
+        public async Task<ActionResult> EditTeacher(string departmentId, string courseId, string courseName)
         {
             PublishCourseViewModel m = new PublishCourseViewModel
             {
                 DepartmentId = departmentId,
                 CourseId = courseId,
                 CourseName = courseName,
-                TeaId = ""
             };
 
-
+            IBLL.ITeacherManager Manager = new TeacherManager();
+            List<TeacherInfoDto> teacherInfos = await Manager.GetTeacherByDepId(departmentId);
+            ViewBag.TeacherList = new SelectList(teacherInfos, "TeaId", "TeaName");
             return View(m);
         }
 
         // POST: Admin/Course/Edit/5
         [HttpPost]
-        public ActionResult EditTeacher(PublishCourseDto p)
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> EditTeacher(PublishCourseViewModel model)
         {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            IBLL.ICourseManager Manager = new CourseManager();
+            await Manager.SaveTeacher(model.DepartmentId, model.CourseId, model.TeaId);
+            return RedirectToAction("ShowPubCourseList");
         }
 
         // GET: Admin/Course/Delete/5

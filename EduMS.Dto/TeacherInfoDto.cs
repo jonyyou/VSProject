@@ -8,6 +8,8 @@ namespace EduMS.Dto
 {
     public class TeacherInfoDto
     {
-
+        public string DepartmentId { get; set; }
+        public string TeaId { get; set; }
+        public string TeaName { get; set; }
     }
 }
