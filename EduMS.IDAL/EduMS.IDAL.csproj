@@ -51,6 +51,7 @@
     <Compile Include="IBannerService.cs" />
     <Compile Include="IBaseService.cs" />
     <Compile Include="ICaltivatePlanService.cs" />
+    <Compile Include="IControlCodeService.cs" />
     <Compile Include="ICourseService.cs" />
     <Compile Include="IDepartmentService.cs" />
     <Compile Include="INewsCategoryService.cs" />

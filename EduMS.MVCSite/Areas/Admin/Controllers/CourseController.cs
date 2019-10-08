@@ -132,14 +132,17 @@ namespace EduMS.MVCSite.Areas.Admin.Controllers
         {
             IBLL.ICourseManager Manager = new CourseManager();
             List<PublishCourseDto> pub = await Manager.PublishCourse(DepartmentId, Semester);
+            ViewBag.DepartmentId = DepartmentId;
+            ViewBag.Semester = Semester;
             return View(pub);
         }
         // GET: Admin/Course/Edit/5
-        public async Task<ActionResult> EditTeacher(string departmentId, string courseId, string courseName)
+        public async Task<ActionResult> EditTeacher(string departmentId, string semester, string courseId, string courseName)
         {
             PublishCourseViewModel m = new PublishCourseViewModel
             {
                 DepartmentId = departmentId,
+                Semester = semester,
                 CourseId = courseId,
                 CourseName = courseName,
             };
@@ -156,30 +159,13 @@ namespace EduMS.MVCSite.Areas.Admin.Controllers
         public async Task<ActionResult> EditTeacher(PublishCourseViewModel model)
         {
             IBLL.ICourseManager Manager = new CourseManager();
-            await Manager.SaveTeacher(model.DepartmentId, model.CourseId, model.TeaId);
+            await Manager.SaveTeacher(model.DepartmentId, model.Semester, model.CourseId, model.TeaId);
             return RedirectToAction("ShowPubCourseList");
         }
 
-        // GET: Admin/Course/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult StartSelection()
         {
-            return View();
-        }
-
-        // POST: Admin/Course/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return Content("发布成功！");
         }
     }
 }

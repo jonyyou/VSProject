@@ -81,6 +81,7 @@ namespace EduMS.BLL
                 pub.Add(new PublishCourseDto
                 { 
                     DepartmentId = departmentId,
+                    Semester = semester,
                     CourseId = item.CourseId,
                     CourseName = item.CourseName,
                     TeaName = ""
@@ -90,13 +91,14 @@ namespace EduMS.BLL
             return pub;
         }
 
-        public async Task SaveTeacher(string departmentId, string courseId, string teaId)
+        public async Task SaveTeacher(string departmentId,string semester, string courseId, string teaId)
         {
             PublishedCourse model = new PublishedCourse
             {
                 ModifyTime = DateTime.Now,
-                CourseId = courseId,
                 DepartmentId = departmentId,
+                Semester = semester,
+                CourseId = courseId,
                 TeaId = teaId
             };
 

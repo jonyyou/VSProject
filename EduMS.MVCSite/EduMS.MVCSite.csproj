@@ -133,6 +133,7 @@
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\NewsController.cs" />
     <Compile Include="Areas\Admin\Controllers\OriginClassController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TeacherController.cs" />
     <Compile Include="Attribute\MultiButtonAttribute.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -148,6 +149,7 @@
     <Compile Include="Models\Admin\PublishCourseViewModel.cs" />
     <Compile Include="Models\Admin\SpecialityViewModel.cs" />
     <Compile Include="Models\Admin\StudentViewModel.cs" />
+    <Compile Include="Models\Admin\TeacherViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -285,6 +287,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\SelectCourse\" />
     <Folder Include="Banner\" />
   </ItemGroup>
   <ItemGroup>

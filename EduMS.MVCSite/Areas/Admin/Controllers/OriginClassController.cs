@@ -55,12 +55,12 @@ namespace EduMS.MVCSite.Areas.Admin.Controllers
         public async Task<ActionResult> CreateStudents()
         {
             IBLL.IDepart_SpeManager Mnger = new Depart_SpeManager();
-            List<DepartmentInfoDto> departmentList = await Mnger.GetAllDepartments(); ;
+            List<DepartmentInfoDto> departmentList = await Mnger.GetAllDepartments(); 
             ViewBag.DepartmentList = departmentList;
 
 
             IBLL.IOriginClassManager Mnger2 = new OriginClassManager();
-            List<OriginClassDto> classList = await Mnger2.GetAllOriginClasses(); ;
+            List<OriginClassDto> classList = await Mnger2.GetAllOriginClasses(); 
             ViewBag.classList = classList;
             return View();
         }

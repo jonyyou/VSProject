@@ -7,6 +7,9 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.Semester)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.CourseId)
         </th>
         <th>
@@ -18,23 +21,30 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CourseId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CourseName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TeaName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "EditTeacher", new { departmentId = item.DepartmentId, courseId = item.CourseId ,courseName=item.CourseName}) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
-
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Semester)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CourseId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CourseName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TeaName)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "EditTeacher", new { departmentId = item.DepartmentId, semester=item.Semester, courseId = item.CourseId, courseName = item.CourseName }) |
+        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+    </td>
+</tr>
+    }
 </table>
+
+
+@Html.ActionLink("开始选课", "StartSelection", new { departmentId = ViewBag.DepartmentId, semester = ViewBag.Semester }) |
+@Html.ActionLink("停止选课", "StopSelection", new { departmentId = ViewBag.DepartmentId,semester = ViewBag.Semester }) |

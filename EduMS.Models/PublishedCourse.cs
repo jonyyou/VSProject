@@ -15,6 +15,8 @@ namespace EduMS.Models
         public string DepartmentId { get; set; }
         public Department Department { get; set; }
 
+        public string Semester { get; set; }
+
         [ForeignKey(nameof(Course))]
         public string CourseId { get; set; }
         public Course Course { get; set; }

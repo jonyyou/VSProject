@@ -34,7 +34,7 @@ namespace EduMS.MVCSite.Areas.Admin.Controllers
         public async Task<ActionResult> CreateTeacher(TeacherViewModel model)
         {
             if (!ModelState.IsValid) return View(model);
-            IBLL.ITeacherManager Manager = new ITeacherManager();
+            IBLL.ITeacherManager Manager = new TeacherManager();
             await Manager.AddTeacher(model.TeaId, model.TeaName,model.TeaGender,model.TeaTele,model.TeaIDNumber,model.Teapwd,model.TeaDepartment);
             return Content("添加成功");
         }

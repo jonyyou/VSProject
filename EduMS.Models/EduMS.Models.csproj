@@ -54,6 +54,7 @@
     <Compile Include="Banner.cs" />
     <Compile Include="BaseEntity.cs" />
     <Compile Include="CaltivatePlan.cs" />
+    <Compile Include="ControlCode.cs" />
     <Compile Include="Course.cs" />
     <Compile Include="Department.cs" />
     <Compile Include="EduContext.cs" />
@@ -97,6 +98,10 @@
     <Compile Include="Migrations\201909190059469_addCaltivatePlan.cs" />
     <Compile Include="Migrations\201909190059469_addCaltivatePlan.Designer.cs">
       <DependentUpon>201909190059469_addCaltivatePlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910070155553_createControlCode.cs" />
+    <Compile Include="Migrations\201910070155553_createControlCode.Designer.cs">
+      <DependentUpon>201910070155553_createControlCode.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="News.cs" />
@@ -142,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909190059469_addCaltivatePlan.resx">
       <DependentUpon>201909190059469_addCaltivatePlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910070155553_createControlCode.resx">
+      <DependentUpon>201910070155553_createControlCode.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

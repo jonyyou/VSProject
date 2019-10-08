@@ -40,6 +40,7 @@ namespace EduMS.Models
         public DbSet<PublishedCourse> PublishedCourse { get; set; }
         public DbSet<Enrollment> Enrollment { get; set; }
         public DbSet<CaltivatePlan> CaltivatePlan { get; set; }
+        public DbSet<ControlCode> ControlCode { get; set; }
 
 
 
