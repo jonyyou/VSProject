@@ -14,7 +14,7 @@ namespace EduMS.MVCSite.Areas.Admin.Controllers
         // GET: Admin/Teacher
         public ActionResult Index()
         {
-            return View();
+            return View(await new TeacherManager().GetAllTeachers());
         }
 
         public ActionResult Details(int id)
@@ -26,6 +26,13 @@ namespace EduMS.MVCSite.Areas.Admin.Controllers
         [HttpGet]       //请求指定页面的信息，并返回实体主体
         public ActionResult CreateTeacher()
         {
+            IBLL.IDepart_SpeManager Mnger = new Depart_SpeManager();
+            List<DepartmentInfoDto> departmentList = await Mnger.GetAllDepartments(); 
+            ViewBag.DepartmentList = departmentList;
+
+          //  IBLL.ITeacherManager Mnger3 = new IBLL.ITeacherManager();
+           // List<TeacherInfoDto> teacherList = await Mnger3.GetAllTeachers();
+           // ViewBag.teacherList = teacherList;
             return View();
         }
 
