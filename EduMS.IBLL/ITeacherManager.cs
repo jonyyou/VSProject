@@ -1,4 +1,5 @@
-﻿using EduMS.Dto;
+﻿//BLL层函数原型
+using EduMS.Dto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
