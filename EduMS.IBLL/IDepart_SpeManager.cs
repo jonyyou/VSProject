@@ -14,5 +14,6 @@ namespace EduMS.IBLL
         Task AddSpeciality(string SpecialityId, string specialityName, string departmentId);
         Task<List<DepartmentInfoDto>> GetAllDepartments();
         Task<List<SpecialityInfoDto>> GetAllSpecialitys(string departmentId);
+        Task<List<string>> GetAllDepartmentId();
     }
 }

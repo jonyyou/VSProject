@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using EduMS.BLL;
+using EduMS.Dto;
 using EduMS.MVCSite.Models.Admin;
 
 namespace EduMS.MVCSite.Areas.Admin.Controllers
@@ -50,8 +52,11 @@ namespace EduMS.MVCSite.Areas.Admin.Controllers
 
         // GET: Admin/Department/CreateSpeciality
         [HttpGet]
-        public ActionResult CreateSpeciality()
+        public async Task<ActionResult> CreateSpeciality()
         {
+            IBLL.IDepart_SpeManager Mnger = new Depart_SpeManager();
+            List<DepartmentInfoDto> departmentList = await Mnger.GetAllDepartments(); ;
+            ViewBag.DepartmentList = departmentList;
             return View();
         }
 
@@ -60,6 +65,7 @@ namespace EduMS.MVCSite.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> CreateSpeciality(SpecialityViewModel model)
         {
+            
             if (!ModelState.IsValid) return View(model);
             IBLL.IDepart_SpeManager Manager = new Depart_SpeManager();
             await Manager.AddSpeciality(model.SpecialityId, model.SpecialityName, model.DepartmentId);

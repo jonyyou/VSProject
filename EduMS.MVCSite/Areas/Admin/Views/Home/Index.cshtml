@@ -39,15 +39,16 @@
                     <dt><i class="icon-user"></i> 前台管理<b></b></dt>
                     <dd>
                         <ul>
-                            <li><a _href="news.html" href="javascript:;">新闻管理</a></li>
-                            <li><a _href="newsclassify.html" href="javascript:void(0)">新闻类别</a></li>
-                            <li><a _href="comment.html" href="javascript:void(0)">评论管理</a></li>
-                            <li><a _href="banner.html" href="javascript:void(0)">Banner管理</a></li>
+                            <li><a _href="/Admin/Banner/Index" href="javascript:;">轮播图管理</a></li>
+                            <li><a _href="/Admin/News/Index" href="javascript:;">查看新闻</a></li>
+                            <li><a _href="/Admin/News/NewsCategoryList" href="javascript:void(0)">查看新闻类别</a></li>
+                            <li><a _href="/Admin/News/AddNewsCategory" href="javascript:void(0)">添加新闻类别</a></li>
+                            <li><a _href="/Admin/News/AddNews" href="javascript:void(0)">添加新闻</a></li>
                         </ul>
                     </dd>
                 </dl>
 
-                <dl id="menu-user" class="selected">
+                <dl id="menu-user">
                     <dt><i class="icon-user"></i> 院系&专业管理<b></b></dt>
                     <dd>
                         <ul>
@@ -58,7 +59,7 @@
                     </dd>
                 </dl>
 
-                <dl id="menu-user" class="selected">
+                <dl id="menu-user">
                     <dt><i class="icon-user"></i> 班级&学生管理<b></b></dt>
                     <dd>
                         <ul>
@@ -83,11 +84,11 @@
                 </dl>
 
                 <dl id="menu-user">
-                    <dt><i class="icon-user"></i> 课程管理<b></b></dt>
+                    <dt><i class="icon-user"></i> 课程&选课管理<b></b></dt>
                     <dd>
                         <ul>
-                            <li><a _href="news.html" href="javascript:;">新闻管理</a></li>
-                            <li><a _href="newsclassify.html" href="javascript:void(0)">新闻类别</a></li>
+                            <li><a _href="/Admin/Course/Index" href="javascript:;">课程管理</a></li>
+                            <li><a _href="/Admin/Course/QueryCaltivatePlan" href="javascript:void(0)">培养方案</a></li>
                             <li><a _href="comment.html" href="javascript:void(0)">评论管理</a></li>
                             <li><a _href="banner.html" href="javascript:void(0)">Banner管理</a></li>
                         </ul>
@@ -100,7 +101,7 @@
             <div id="Hui-tabNav" class="Hui-tabNav">
                 <div class="Hui-tabNav-wp">
                     <ul id="min_title_list" class="acrossTab cl">
-                        <li class="active"><span title="新闻管理" data-href="news.html">新闻管理</span><em></em></li>
+                        <li class="active"><span title="新闻管理" data-href="/Admin/News/Index">新闻管理</span><em></em></li>
                     </ul>
                 </div>
                 <div class="Hui-tabNav-more btn-group"><a id="js-tabNav-prev" class="btn radius btn-default btn-small" href="javascript:;"><i class="icon-step-backward"></i></a><a id="js-tabNav-next" class="btn radius btn-default btn-small" href="javascript:;"><i class="icon-step-forward"></i></a></div>
@@ -108,7 +109,7 @@
             <div id="iframe_box" class="Hui-articlebox">
                 <div class="show_iframe">
                     <div style="display:none" class="loading"></div>
-                    <iframe scrolling="yes" frameborder="0" src="news.html"></iframe>
+                    <iframe scrolling="yes" frameborder="0" src="/Admin/News/Index"></iframe>
                 </div>
             </div>
         </section>

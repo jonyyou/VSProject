@@ -39,6 +39,7 @@ namespace EduMS.BLL
             {
                 await teaSvc.CreateAsync(new Teacher()
                 {
+                    ModifyTime = DateTime.Now,
                     TeaId = teaId,
                     TeaName = teaName,
                     Gender = gender,
@@ -56,6 +57,7 @@ namespace EduMS.BLL
             {
                 await adminSvc.CreateAsync(new Admin()
                 {
+                    ModifyTime = DateTime.Now,
                     AdminId = adminId,
                     AdminName = adminName,
                     Gender = gender,

@@ -11,5 +11,6 @@ namespace EduMS.IBLL
     {
         Task AddTeacher(string teaId, string teaName, string gender, string telephone, string IDNumber, string pwd, string DepartmentId);
         Task<List<TeacherInfoDto>> GetAllTeachers();
+        Task<List<TeacherInfoDto>> GetTeacherByDepId(string depId);
     }
 }

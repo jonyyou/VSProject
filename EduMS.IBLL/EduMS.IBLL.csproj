@@ -41,7 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IBannerManager.cs" />
+    <Compile Include="ICourseManager.cs" />
     <Compile Include="IDepart_SpeManager.cs" />
+    <Compile Include="INewsManager.cs" />
     <Compile Include="IOriginClassManager.cs" />
     <Compile Include="ITeacherManager.cs" />
     <Compile Include="IUserManager.cs" />

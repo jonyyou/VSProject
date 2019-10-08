@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using EduMS.Dto;
 
 namespace EduMS.MVCSite.Models.Admin
 {
@@ -19,7 +20,7 @@ namespace EduMS.MVCSite.Models.Admin
         /// <summary>
         /// 院系外键
         /// </summary>
-        [Display(Name = "院系ID")]
+        [Display(Name = "院系名称")]
         public string DepartmentId { get; set; }
     }
 }

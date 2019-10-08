@@ -54,5 +54,7 @@ namespace EduMS.Models
         //[ForeignKey(nameof(Speciality))]
        // public string SpecialityId { get; set; }
        // public Speciality Speciality { get; set; }
+
+        public virtual ICollection<Enrollment> Enrollments { get; set; }
     }
 }

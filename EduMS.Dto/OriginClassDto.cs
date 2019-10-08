@@ -8,7 +8,9 @@ namespace EduMS.Dto
 {
     public class OriginClassDto
     {
+        public string DepartmentId { get; set; }
         public string DepartmentName { get; set; }
+
         public string ClassId { get; set; }
 
         public string ClassName { get; set; }

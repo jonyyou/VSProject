@@ -48,10 +48,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IAdminService.cs" />
+    <Compile Include="IBannerService.cs" />
     <Compile Include="IBaseService.cs" />
+    <Compile Include="ICaltivatePlanService.cs" />
+    <Compile Include="ICourseService.cs" />
     <Compile Include="IDepartmentService.cs" />
     <Compile Include="INewsCategoryService.cs" />
+    <Compile Include="INewsService.cs" />
     <Compile Include="IOriginClassService.cs" />
+    <Compile Include="IPublishedCourseService.cs" />
     <Compile Include="ISpecialityService.cs" />
     <Compile Include="IStudentService.cs" />
     <Compile Include="ITeacherService.cs" />

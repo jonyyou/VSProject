@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 using EduMS.IBLL;
 using EduMS.Models;
-
+using EduMS.Dto;
 
 namespace EduMS.BLL
 {
@@ -27,6 +27,23 @@ namespace EduMS.BLL
                     DepartmentId= DepartmentId
 
                 });
+            }
+        }
+
+        public Task<List<TeacherInfoDto>> GetAllTeachers()
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<List<TeacherInfoDto>> GetTeacherByDepId(string depId)
+        {
+            using(IDAL.ITeacherService teaSvc = new DAL.TeacherService())
+            {
+                return await teaSvc.GetAllAsync().Where(m=>m.DepartmentId==depId).Select(m => new Dto.TeacherInfoDto()
+                {
+                    TeaId = m.TeaId,
+                    TeaName = m.TeaName
+                }).ToListAsync();
             }
         }
     }
