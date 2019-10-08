@@ -6,13 +6,14 @@ using System.Web.Mvc;
 using EduMS.MVCSite.Models.Admin;
 using EduMS.BLL;
 using System.Threading.Tasks;
+using EduMS.Dto;
 
 namespace EduMS.MVCSite.Areas.Admin.Controllers
 {
     public class TeacherController : Controller
     {
         // GET: Admin/Teacher
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
             return View(await new TeacherManager().GetAllTeachers());
         }
@@ -24,7 +25,7 @@ namespace EduMS.MVCSite.Areas.Admin.Controllers
 
 
         [HttpGet]       //请求指定页面的信息，并返回实体主体
-        public ActionResult CreateTeacher()
+        public async Task<ActionResult> CreateTeacher()
         {
             IBLL.IDepart_SpeManager Mnger = new Depart_SpeManager();
             List<DepartmentInfoDto> departmentList = await Mnger.GetAllDepartments(); 
