@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="IBannerManager.cs" />
     <Compile Include="ICourseManager.cs" />
+    <Compile Include="ICtrlCodeManager.cs" />
     <Compile Include="IDepart_SpeManager.cs" />
     <Compile Include="INewsManager.cs" />
     <Compile Include="IOriginClassManager.cs" />

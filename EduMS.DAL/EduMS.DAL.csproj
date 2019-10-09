@@ -52,6 +52,7 @@
     <Compile Include="BannerService.cs" />
     <Compile Include="BaseService.cs" />
     <Compile Include="CaltivatePlanService.cs" />
+    <Compile Include="ControlCodeService.cs" />
     <Compile Include="CourseService.cs" />
     <Compile Include="DepartmentService.cs" />
     <Compile Include="NewsCategoryService.cs" />

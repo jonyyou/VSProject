@@ -1,31 +1,349 @@
 ﻿@{
     ViewBag.Title = "Home Page";
+    Layout = null;
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <title>My First Page</title>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    <!--
+    <style scope="jwc-login">
+        jwc-login {
+            display: block;
+            line-height: 140%
+        }
+
+        h3.jwc-login {
+            height: 28px;
+            line-height: 26px;
+            padding-left: 10px;
+            font-size: 14px;
+            color: black;
+            font-weight: bold;
+        }
+
+
+    </style> -->
+
+    <style type="text/css">
+
+        body, ul, ol, li, h1, h2, h3, h4, h5, h6, td, th, form, fieldset, img, dl, dt, dd {
+            margin: 0;
+            padding: 0;
+        }
+
+        li, ol {
+            list-style: none;
+        }
+
+        img {
+            border: 0
+        }
+
+        body {
+            position: relative;
+            min-width: 980px;
+            background: #E3E3E3;
+        }
+
+        #head {
+            width: 980px;
+            height: 150px;
+            margin: 0px auto;
+            background-color: #49799C;
+        }
+
+        .navBar {
+            position: relative;
+            height: 40px;
+            width: 980px;
+            line-height: 40px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            margin: auto;
+            background: #0A3F75
+        }
+
+        .nav {
+            width: 858px;
+            margin: 0px auto;
+            font-family: "Microsoft YaHei", SimSun, SimHei;
+        }
+
+            .nav .m {
+                position: relative;
+                float: left;
+                width: 112px;
+                margin: 0 5px;
+                display: inline;
+                text-align: center;
+                font-weight: bold;
+            }
+
+        #container {
+            width: 980px;
+            margin: 10px auto;
+            background: white;
+            overflow: hidden;
+            zoom: 1;
+        }
+
+        #news {
+            position: relative;
+            overflow: hidden;
+            zoom: 1;
+            height: 360px;
+            margin-bottom: 0px;
+            width: 945px;
+            padding: 15px;
+        }
+
+
+
+
+        #leftbox {
+            background: #efefef;
+            float: left;
+            width: 710px;
+            padding-left: 15px;
+            padding-bottom: 10px;
+            padding-top: 15px;
+        }
+
+        #rightbox {
+            background: #efefef;
+            float: left;
+            padding-left: 0px;
+            width: 250px;
+            padding-top: 15px;
+        }
+
+        .hasMoreTab1 {
+            height: 300px;
+            width: 700px;
+            font-family: "Microsoft YaHei";
+            border: 1px solid #C8D1D5;
+            margin-bottom: 10px;
+        }
+
+            .hasMoreTab1 .newstab {
+                height: 43px;
+                background: #49799C;
+            }
+
+                .hasMoreTab1 .newstab li {
+                    text-align: center;
+                    display: inline-block;
+                    height: 43px;
+                    line-height: 43px;
+                    float: left;
+                    font-size: 15px;
+                    font-family: "Microsoft YaHei" color: #000000;
+                    cursor: default;
+                    padding: 0 16px;
+                }
+
+            .hasMoreTab1 .newscontent {
+                margin: 6px 0 15px 15px;
+                background: #f5f3f3;
+                padding: 10px 25px;
+                height: 433px;
+                color: #000000;
+            }
+
+
+        .loginbox {
+            border: #dfdfdf 1px solid;
+            background: #ececec;
+            overflow: hidden;
+            zoom: 1;
+            height: auto;
+            margin-bottom: 10px;
+            width: 240px;
+        }
+
+            .loginbox h3 {
+                height: 28px;
+                line-height: 26px;
+                padding-left: 10px;
+                font-size: 14px;
+                color: #FFFFFF;
+                font-family: "Microsoft YaHei";
+                font-weight: bold;
+                background: #49799C;
+            }
+
+        .links {
+            border: #dfdfdf 1px solid;
+            background: #ececec;
+            overflow: hidden;
+            zoom: 1;
+            height: auto;
+            margin-bottom: 10px;
+            line-height: 140%;
+            width: 240px;
+        }
+
+            .links h3 {
+                height: 28px;
+                line-height: 26px;
+                padding-left: 10px;
+                font-size: 14px;
+                color: #FFFFFF;
+                font-family: "Microsoft YaHei";
+                font-weight: bold;
+                background: #49799C;
+            }
+
+            .links ul {
+                margin: 8px;
+            }
+
+            .links li {
+                position: relative;
+                z-index: 1;
+                padding: 4px 0px 4px 10px;
+                line-height: 18px;
+                background: #ececec;
+            }
+
+            .links a {
+                display: inline-block;
+                width: 230px;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                color: #49799C;
+                margin: 5px 0px;
+            }
+
+        #footer {
+            border-top: 1px solid #e5cae5;
+        }
+    </style>
+</head>
+<body>
+    <div id="head">
+
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+
+    <div class="navBar">
+        <ul class="nav clearfix">
+            <li id="m3" class="m">
+                <h3>机构设置</h3>
+            </li>
+
+            <li id="m3" class="m">
+                <h3>信息公开</h3>
+            </li>
+
+            <li id="m3" class="m">
+                <h3>规章制度</h3>
+            </li>
+
+            <li id="m3" class="m">
+                <h3>教学建设</h3>
+            </li>
+
+            <li id="m3" class="m">
+                <h3>下载专区</h3>
+            </li>
+
+            <li id="m3" class="m">
+                <h3>党建家园</h3>
+            </li>
+
+            <li id="m3" class="m">
+                <h3>English</h3>
+            </li>
+        </ul>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+
+    <div id="container">
+        <div id="container2">
+
+            <div id="news"></div>
+
+            <div id="leftbox">
+                <div class="hasMoreTab1">
+                    <ul class="newstab">
+                        <li>
+                            <span class="title_cn">教师通知</span>
+                            <span class="title_en">Teachers notices</span>
+                        </li>
+                        <li>
+                            <span class="title_cn">学生通知</span>
+                            <span class="title_en">Students notices</span>
+                        </li>
+                        <li>
+                            <span class="title_cn">新闻</span>
+                            <span class="title_en">News</span>
+                        </li>
+
+                    </ul>
+
+                    <ul class="newscontent">
+                    </ul>
+                </div>
+            </div>
+
+            <div id="rightbox">
+                <div class="loginbox">
+                    <h3>用户登录</h3>
+                    <form action="/Home/Login" method="post">
+                        <div class="form-group">
+                            <label for="name">用户名</label>
+                            <input type="text" name="username" id="name" class="form-control" placeholder="请输入用户名" style="height:28px; border:1px solid #DDDDDD; padding-left:3px;">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">密码</label>
+                            <input type="password" name="password" id="password" class="form-control" placeholder="请输入密码" style="height:28px; border:1px solid #DDDDDD; padding-left:3px;">
+                        </div>
+                        <div class="form-group">
+                            <input type="radio" name="identity" value="0">学生
+                            <input type="radio" name="identity" value="1">教师
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-default" value="登录">
+                        </div>
+                        
+                    </form>
+                </div>
+
+                <div class="links">
+                    <h3>友情链接</h3>
+                    <ul>
+                        <li>
+                            <a href="" target="_blank">教育部</a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">教育部</a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">教育部</a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">教育部</a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">教育部</a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">教育部</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="links"></div>
+        </div>
     </div>
-</div>
+
+    <div id="footer">
+
+    </div>
+</body>
+</html>

@@ -17,6 +17,26 @@ namespace EduMS.MVCSite.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult Login(string username, string password, string identity)
+        {
+            IBLL.IUserManager manager = new UserManager();
+            Guid uid=new Guid();
+            int returnCode = manager.Login(username, password, identity, out uid);
+            if(returnCode==0)
+            {
+                return RedirectToAction("Index","Student");
+            }
+            else if(returnCode==1)
+            {
+                return RedirectToAction("Index", "Teacher");
+            }
+            else
+            {
+                return Content("<script>alert('用户名或密码错误！');history.go(-1);</script>");
+            }
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

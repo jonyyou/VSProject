@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="BannerManager.cs" />
     <Compile Include="CourseManager.cs" />
+    <Compile Include="CtrlCodeManager.cs" />
     <Compile Include="Depart_SpeManager.cs" />
     <Compile Include="NewsManager.cs" />
     <Compile Include="OriginClassManager.cs" />

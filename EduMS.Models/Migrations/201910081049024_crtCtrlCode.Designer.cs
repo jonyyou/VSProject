@@ -7,13 +7,13 @@ namespace EduMS.Models.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class createControlCode : IMigrationMetadata
+    public sealed partial class crtCtrlCode : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(createControlCode));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(crtCtrlCode));
         
         string IMigrationMetadata.Id
         {
-            get { return "201910070155553_createControlCode"; }
+            get { return "201910081049024_crtCtrlCode"; }
         }
         
         string IMigrationMetadata.Source

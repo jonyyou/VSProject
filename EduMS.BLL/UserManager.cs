@@ -13,65 +13,10 @@ namespace EduMS.BLL
 {
     public class UserManager : IUserManager
     {
-        public async Task AddStudent(string stuId, string stuName, string gender, string telephone, string IDNumber, string pwd, string major, string classId)
+
+        public int Login(string userId, string pwd, string identity, out Guid id)
         {
-            using (IDAL.IStudentService stuSvc = new DAL.StudentService())
-            {
-                await stuSvc.CreateAsync(new Student()
-                {
-                    ModifyTime = DateTime.Now,
-                    StuId = stuId,
-                    StuName = stuName,
-                    Gender = gender,
-                    Telephone = telephone,
-                    IDNumber = IDNumber,
-                    Pwd = pwd,
-                    Major = major,
-                    ClassId = classId
-
-                }) ;
-            }
-        }
-
-        public async Task AddTeacher(string teaId, string teaName, string gender, string telephone, string IDNumber, string pwd)
-        {
-            using (IDAL.ITeacherService teaSvc = new DAL.TeacherService())
-            {
-                await teaSvc.CreateAsync(new Teacher()
-                {
-                    ModifyTime = DateTime.Now,
-                    TeaId = teaId,
-                    TeaName = teaName,
-                    Gender = gender,
-                    Telephone = telephone,
-                    IDNumber = IDNumber,
-                    Pwd = pwd
-
-                });
-            }
-        }
-
-        public async Task AddAdmin(string adminId, string adminName, string gender, string telephone, string IDNumber, string pwd)
-        {
-            using (IDAL.IAdminService adminSvc = new DAL.AdminService())
-            {
-                await adminSvc.CreateAsync(new Admin()
-                {
-                    ModifyTime = DateTime.Now,
-                    AdminId = adminId,
-                    AdminName = adminName,
-                    Gender = gender,
-                    Telephone = telephone,
-                    IDNumber = IDNumber,
-                    Pwd = pwd
-
-                });
-            }
-        }
-
-        public bool Login(string userId, string pwd, int identity, out Guid id)
-        {
-            if (identity == 0)  //学生
+            if (identity == "0")  //学生
             {
                 using (IDAL.IStudentService userSvc = new DAL.StudentService())
                 {
@@ -81,18 +26,18 @@ namespace EduMS.BLL
                     if (data == null)
                     {
                         id = new Guid();
-                        return false;
+                        return -1;
                     }
                     else
                     {
                         id = data.Id;
-                        return true;
+                        return 0;
                     }
 
                 }
 
             }
-            else if (identity == 1)   //教师
+            else if (identity == "1")   //教师
             {
                 using (IDAL.ITeacherService userSvc = new DAL.TeacherService())
                 {
@@ -102,18 +47,18 @@ namespace EduMS.BLL
                     if (data == null)
                     {
                         id = new Guid();
-                        return false;
+                        return -1;
                     }
                     else
                     {
                         id = data.Id;
-                        return true;
+                        return 1;
                     }
 
                 }
 
             }
-            else if (identity == 2)   //管理员
+            else if (identity == "2")   //管理员
             {
                 using (IDAL.IAdminService userSvc = new DAL.AdminService())
                 {
@@ -123,18 +68,18 @@ namespace EduMS.BLL
                     if (data == null)
                     {
                         id = new Guid();
-                        return false;
+                        return -1;
                     }
                     else
                     {
                         id = data.Id;
-                        return true;
+                        return 2;
                     }
 
                 }
             }
             id = new Guid();
-            return false;
+            return -1;
 
         }
 

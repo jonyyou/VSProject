@@ -163,9 +163,19 @@ namespace EduMS.MVCSite.Areas.Admin.Controllers
             return RedirectToAction("ShowPubCourseList");
         }
 
-        public ActionResult StartSelection()
+        public async Task<ActionResult> StartSelection()
         {
+            IBLL.ICtrlCodeManager Manager = new CtrlCodeManager();
+            await Manager.StartSelection();
             return Content("发布成功！");
         }
+
+        public async Task<ActionResult> StopSelection()
+        {
+            IBLL.ICtrlCodeManager Manager = new CtrlCodeManager();
+            await Manager.StopSelection();
+            return Content("选课结束！");
+        }
+
     }
 }

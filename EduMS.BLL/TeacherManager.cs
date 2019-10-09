@@ -18,15 +18,16 @@ namespace EduMS.BLL
             {
                 await teaSvc.CreateAsync(new Teacher()
                 {
+                    ModifyTime = DateTime.Now,
                     TeaId = teaId,
                     TeaName = teaName,
                     Gender = gender,
                     Telephone = telephone,
                     IDNumber = IDNumber,
                     Pwd = pwd,
-                    DepartmentId= DepartmentId
+                    DepartmentId = DepartmentId
 
-                });
+                }) ;
             }
         }
 

@@ -136,6 +136,8 @@
     <Compile Include="Areas\Admin\Controllers\TeacherController.cs" />
     <Compile Include="Attribute\MultiButtonAttribute.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -150,6 +152,7 @@
     <Compile Include="Models\Admin\SpecialityViewModel.cs" />
     <Compile Include="Models\Admin\StudentViewModel.cs" />
     <Compile Include="Models\Admin\TeacherViewModel.cs" />
+    <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -222,6 +225,14 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Student\images\tp1.png" />
+    <Content Include="Content\Student\images\tp2.png" />
+    <Content Include="Content\Student\images\tp3.png" />
+    <Content Include="Content\Student\images\tp4.png" />
+    <Content Include="Content\Student\images\tp5.png" />
+    <Content Include="Content\Student\images\tp6.png" />
+    <Content Include="Content\Student\images\tp7.png" />
+    <Content Include="Content\Student\css\Index.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -285,6 +296,8 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Teacher\Index.cshtml" />
+    <Content Include="Views\Student\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
